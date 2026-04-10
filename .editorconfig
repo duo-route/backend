@@ -1,0 +1,14 @@
+root = true
+
+# 모든 파일에 적용
+[*]
+charset = utf-8
+end_of_line = lf
+indent_size = 4
+indent_style = space
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# 마크다운이나 YAML 등 예외로 2칸 들여쓰기 할 파일들
+[*.{yml,yaml,md}]
+indent_size = 2
