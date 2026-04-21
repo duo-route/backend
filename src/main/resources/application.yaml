@@ -1,3 +1,20 @@
 spring:
   application:
     name: backend
+  # 데이터베이스 연결 정보 (docker-compose.yml에 적어둔 환경변수와 맞춰주세요!)
+  datasource:
+    url: ${DB_POSTGRE_URL} # DB 이름 확인
+    username: ${DB_POSTGRE_USERNAME} # 계정명 확인
+    password: ${DB_POSTGRE_PASSWORD}! # 비밀번호 확인
+    driver-class-name: org.postgresql.Driver
+
+  # JPA (Hibernate) 설정
+  jpa:
+    hibernate:
+      # 서버가 켜질 때 Entity 클래스를 읽어서 DB에 테이블을 자동으로 생성/수정
+      ddl-auto: update
+    show-sql: true # 터미널에 JPA가 실행하는 SQL 쿼리를 보여줌
+    properties:
+      hibernate:
+        format_sql: true # SQL을 보기 좋게 정렬해서 출력
+        dialect: org.hibernate.dialect.PostgreSQLDialect
