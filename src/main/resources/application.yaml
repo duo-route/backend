@@ -3,9 +3,9 @@ spring:
     name: backend
   # 데이터베이스 연결 정보 (docker-compose.yml에 적어둔 환경변수와 맞춰주세요!)
   datasource:
-    url:  # DB 이름 확인
-    username:  # 계정명 확인
-    password:  # 비밀번호 확인
+    url: ${DB_POSTGRE_URL} # DB 이름 확인
+    username: ${DB_POSTGRE_USERNAME} # 계정명 확인
+    password: ${DB_POSTGRE_PASSWORD}! # 비밀번호 확인
     driver-class-name: org.postgresql.Driver
 
   # JPA (Hibernate) 설정
